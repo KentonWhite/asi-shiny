@@ -43,7 +43,7 @@ RUN R -e "install.packages('RJSONIO', dependencies = TRUE, repos='http://cran.rs
 RUN R -e "devtools::install_github('kentonwhite/esReader')"
 RUN R -e "devtools::install_github('rstudio/leaflet')"
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
-COPY myapp /srv/shiny-server/
+# COPY myapp /srv/shiny-server/
 
 EXPOSE 80
 
