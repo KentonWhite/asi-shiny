@@ -1,6 +1,6 @@
 FROM r-base:latest
 
-MAINTAINER Flavio Barros "flaviommbarros@gmail.com"
+MAINTAINER Kenton White "kenton.white@advancedsymbolics.com"
 
 RUN apt-get update && apt-get -y --force-yes install \
     sudo \
