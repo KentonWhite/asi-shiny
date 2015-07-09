@@ -2,7 +2,7 @@ FROM r-base:latest
 
 MAINTAINER Kenton White "kenton.white@advancedsymbolics.com"
 
-RUN apt-get update && apt-get -y --force-yes install \
+RUN apt-get update && apt-get install -t unstable -y --no-install-recommends \
     sudo \
     gdebi-core \
     pandoc \
