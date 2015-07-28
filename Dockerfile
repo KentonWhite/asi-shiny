@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -t unstable -y --no-install-recommends \
     libcairo2-dev/unstable \
     libxt-dev \
     libxml2-dev \
+    openjdk-7-* \
     r-cran-rjava \
     libgdal1-dev \
     libproj-dev
@@ -19,6 +20,8 @@ RUN apt-get update && apt-get install -t unstable -y --no-install-recommends \
 RUN wget --no-verbose http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
     dpkg -i libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
     rm -f libssl0.9.8_0.9.8o-4squeeze14_amd64.deb
+
+RUN R CMD javareconf
 
 # Download and install shiny server
 RUN wget --no-verbose  --no-check-certificate https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION -O "version.txt" && \
