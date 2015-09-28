@@ -30,13 +30,14 @@ RUN wget --no-verbose  --no-check-certificate https://s3.amazonaws.com/rstudio-s
     gdebi -n ss-latest.deb && \
     rm -f version.txt ss-latest.deb
 
-RUN R -e "install.packages(c('ggvis', 'ProjectTemplate', 'reshape', 'plyr', 'dplyr', 'stringr', 'lubridate', 'changepoint', 'devtools'), dependencies = TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('devtools', dependencies = TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "devtools::install_github('johnmyleswhite/ProjectTemplate')"
+RUN R -e "install.packages(c('ggvis', 'reshape', 'plyr', 'dplyr', 'stringr', 'lubridate', 'changepoint', 'devtools'), dependencies = TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('shiny', dependencies = TRUE, repos='http://cran.rstudio.com/')"
 # RUN apt-get install -t unstable -y --no-install-recommends libxml2-dev
 # RUN apt-get install -t unstable -y --no-install-recommends r-cran-rjava libgdal1-dev libproj-dev
 RUN R -e "install.packages(c('XML', 'RJDBC'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages(c('rgdal'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('devtools', dependencies = TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('RJSONIO', dependencies = TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "devtools::install_github('kentonwhite/esReader')"
 RUN R -e "devtools::install_github('rstudio/leaflet')"
