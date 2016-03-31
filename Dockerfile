@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -t unstable -y --no-install-recommends \
     libxml2-dev \
     openjdk-7-* \
     r-cran-rjava \
-    libgdal1-dev \
+    libgdal-dev \
     libproj-dev
 
 # Download and install libssl 0.9.8
