@@ -17,9 +17,9 @@ RUN apt-get update && apt-get install -t unstable -y --no-install-recommends \
     libproj-dev
 
 # Download and install libssl 0.9.8
-RUN wget --no-verbose http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
-    dpkg -i libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
-    rm -f libssl0.9.8_0.9.8o-4squeeze14_amd64.deb
+# RUN wget --no-verbose http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
+#     dpkg -i libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
+#     rm -f libssl0.9.8_0.9.8o-4squeeze14_amd64.deb
 
 RUN R CMD javareconf
 
