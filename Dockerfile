@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -f -t unstable -y --no-install-recommends 
     libcairo2-dev/unstable \
     libxt-dev \
     libxml2-dev \
-    tzdata-java \
     openjdk-7-* \
     r-cran-rjava \
     libgdal-dev \
