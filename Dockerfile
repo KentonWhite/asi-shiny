@@ -7,7 +7,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe multiverse"
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise-updates main universe multiverse" >> /etc/apt/sources.list
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise-security main universe multiverse" >> /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -t unstable -y --no-install-recommends \
+RUN apt-get update && apt-get install -f -t unstable -y --no-install-recommends \
     sudo \
     gdebi-core \
     pandoc \
