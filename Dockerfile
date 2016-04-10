@@ -3,9 +3,6 @@ FROM r-base:latest
 MAINTAINER Kenton White "kenton.white@advancedsymbolics.com"
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe multiverse" > /etc/apt/sources.list
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise-updates main universe multiverse" >> /etc/apt/sources.list
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise-security main universe multiverse" >> /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -f -t unstable -y --no-install-recommends \
     sudo \
@@ -16,7 +13,7 @@ RUN apt-get update && apt-get install -f -t unstable -y --no-install-recommends 
     libcairo2-dev/unstable \
     libxt-dev \
     libxml2-dev \
-    tzdata=2016c-0ubuntu0.12.04 \
+    tzdata=2016c-0+deb8u1 \
     tzdata-java \
     openjdk-7-* \
     r-cran-rjava \
