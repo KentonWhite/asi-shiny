@@ -18,7 +18,8 @@ RUN apt-get update && apt-get install -f -t unstable -y --no-install-recommends 
     openjdk-7-* \
     r-cran-rjava \
     libgdal-dev \
-    libproj-dev
+    libproj-dev \
+    texlive-full
 
 # Download and install libssl 0.9.8
 # RUN wget --no-verbose http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
